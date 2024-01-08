@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             Ödev: Öyle bir program yazın ki kullanıcıdan İKİ sayı istesin. Daha sonra bu İKİ sayı arasındaki TEK veya ÇİFT 
+            tamsayıların toplamını hesaplayarak sonucu ekrana yazsın. Kullanıcıya TEK veya ÇİFT tamsayılar ile mi ilgili işlem 
+            yapılacağını sorsun?
+            İKİ sayı girin:
+            TEK’leri mi ÇİFT’leri mi toplamak istersiniz?
+             */
+            Console.WriteLine("2 Adet sayı giriniz");
+            int sayi1 = Convert.ToInt32(Console.ReadLine());
+            int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+            int tekToplam = 0;
+            int ciftToplam = 0;
+
+            Console.Write("TEK’leri mi ÇİFT’leri mi toplamak istersiniz? (t/ç): ");
+            string tercih = Console.ReadLine();
+
+            for (int i = sayi1; i <= sayi2; i++)
+            {
+                if (tercih == "t" && i % 2 == 1)
+                {
+                    tekToplam += i;
+                }
+                else if (tercih == "ç" && i % 2 == 0)
+                {
+                    ciftToplam += i;
+                }
+            }
+
+            if (tercih == "t")
+            {
+                Console.WriteLine(sayi1+ "ile" +sayi2+" arasındaki TEK sayıların toplamı: " +tekToplam);
+            }
+            else if (tercih == "ç")
+            {
+                Console.WriteLine(sayi1 +"ile" +sayi2+" arasındaki Çift sayıların toplamı: "+ciftToplam);
+            }
+            else
+            {
+                Console.WriteLine("Geçersiz bir tercih yaptınız. 't' veya 'ç' seçiniz.");
+            }
+        }
+    }
+}
