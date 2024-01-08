@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             Örnek (YAŞAR, 2011, 220):
+            Elemanları dışarıdan girilen 10 elemanlı bir B dizisinin ilk elemanına değer olarak en yakın ikinci elemanı ekrana 
+            yazdıran program.
+            İpucu: En yakın elemanı bulmak için ilk eleman ile diğer tüm elemanlar sıra ile birbirinden çıkarılır ve sonucun mutlak 
+            değeri alınarak en küçük sonucun bulunduğu noktadaki indis değeri en yakın elemanın indis değeri olarak 
+            değerlendirilir.
+            using System;
+            namespace or220
+            { class Program
+             { public static void Main(string[] args) {
+             int sayi, a, e=1;
+             int []B={36,78,18,41,165,75,55,40,125,91};
+             for(a=2;a<B.Length;a++)
+             {
+             if(Math.Abs(B[0]-B[a])<Math.Abs(B[0]-B[e])) e=a;
+             }
+             Console.WriteLine("İlk Sayıya En Yakın Sayı = "+B[e]);
+             Console.Write("Press any key to continue . . . ");
+             Console.ReadKey(true); } } }
+            Ödev: Yukarıdaki programı, dizi değerleri dışarıdan girilecek şekilde düzenleyiniz.
+             */
+            Console.Write("Dizinin eleman sayısını giriniz: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] B = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("B[" + i + "] = ");
+                B[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int e = 1;
+
+            for (int a = 2; a < B.Length; a++)
+            {
+                if (Math.Abs(B[0] - B[a]) < Math.Abs(B[0] - B[e]))
+                {
+                    e = a;
+                }
+            }
+
+            Console.WriteLine("İlk Sayıya En Yakın Sayı = " + B[e]);
+            Console.ReadKey(true);
+        }
+    }
+}
