@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             Örnek (Yaşar, 2011, 94):
+            //b değerinin asal sayı olup olmadığını bulan program!
+            using System;
+            namespace or094
+            {
+            class Program
+            {
+            public static void Main(string[] args)
+            {
+            int a, b =11;
+            String s = "b Sayısı Asal Sayı";
+            if (b == 1) { Console.WriteLine("ASAL DEĞİL!"); goto bitir;}
+            for (a = 2; a <= b / 2; a++)
+             {
+            if (b % a == 0)
+             {
+             s = "b Sayısı Asal Sayı Değil!";
+            break;
+             }
+             }
+            Console.WriteLine(s);
+            bitir:Console.Write("DEVAM ETMEK İÇİN BİR TUŞA BASINIZ. . . ");
+            Console.ReadKey(true);
+            }
+            } }
+            ÖDEV: Yukarıdaki örneği b değeri kullanıcı tarafından girilecek şekilde düzenleyiniz.
+             */
+            Console.Write("Bir sayı girin: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            string durum = "Sayı Asal";
+
+            if (b == 1)
+            {
+                durum = "Sayı Asal Değil";
+            }
+            else
+            {
+                for (int a = 2; a <= b / 2; a++)
+                {
+                    if (b % a == 0)
+                    {
+                        durum = "Sayı Asal Değil";
+                        break;
+                    }
+                }
+            }
+
+            Console.WriteLine(durum);
+
+            Console.Write("Devam etmek için bir tuşa basınız...");
+            Console.ReadKey();
+        }
+    }
+}
