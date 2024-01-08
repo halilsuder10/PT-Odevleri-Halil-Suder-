@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev_11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             ÖDEV: Programda önce girilen sayının en çok iki basamaklı ve 1 – 99 arasında pozitif sayı olduğunu kontrol ettiriniz. 
+            Eğer girilen sayı gerekli şartı sağlamıyor ise programın “Uygun değer girmediniz” mesajı ile sonlanmasını sağlayınız.
+             */
+            Console.Write("Lütfen bir sayı giriniz: ");
+            int girilenSayi;
+
+            if (int.TryParse(Console.ReadLine(), out girilenSayi) && girilenSayi > 0 && girilenSayi < 100)
+            {
+                Console.WriteLine("Girilen sayı uygun.");
+            }
+            else
+            {
+                Console.WriteLine("Uygun değer girmediniz.");
+            }
+        }
+    }
+}
