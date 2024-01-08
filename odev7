@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev7
+{
+    internal class Program
+    {
+            static void Main(string[] args)
+            {
+            /*
+             namespace or096
+            {
+             class Program
+             {
+             public static void Main(string[] args)
+             {
+             double[] a={150,600,700,450,850,275,950,1500,210,368};
+             int b;
+             for (b=0;b<=9;b++){ //foreach(double d in a){
+             if(a[b]>=500)
+            {//burs miktarı 500 ve üzeri olanlara artış yapılmıyor!
+             Console.WriteLine(a[b]); //a[1]=600, a[2]=700, a[4]=850, a[6]=950, a[7]=1500,
+             continue;//döngünün aşağıdaki satırları çalışmadan yeni çevrime gider!
+             }
+             a[b]=(a[b]*0.1)+a[b]; 
+             a[b]=a[b]+50; //a[0]=215, a[3]=545, a[5]=352,5, a[8]=281, a[9]=454,8
+             Console.WriteLine(a[b]); //215,545,352.5,281,454.8
+             }
+             Console.Write("DEVAM ETMEK İÇİN BİR TUŞA BASINIZ. . . ");
+             Console.ReadKey(true);
+             } } }
+            ÖDEV: Örnek096’yı foreach ile yeniden yazınız.
+             */
+            double[] burslar = { 150, 600, 700, 450, 850, 275, 950, 1500, 210, 368 };
+
+                foreach (double burs in burslar)
+                {
+                    if (burs >= 500)
+                    {
+                        Console.WriteLine(burs + "500 ve üzeri, artış yapılmıyor .");
+                    }
+                    else
+                    {
+                        double yeniBurs = (burs * 0.1) + burs + 50;
+                        Console.WriteLine(burs + "Yeni burs: " +yeniBurs);
+                    }
+                }
+
+                Console.Write("Devam etmek için bir tuşa basınız...");
+                Console.ReadKey();
+            }
+        }
+    }
