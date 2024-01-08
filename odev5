@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             ÖDEV: Öyle bir program yazın ki, önce kullanıcıya kaç adet sayı girmek istediğini sorsun. Daha sonra kullanıcıdan sayı 
+            girmesini istesin. Kullanıcı fark etse de etmese de baştan girdiği adet kadar sayı tamamlandığında bu sayıların toplamını 
+            ve ortalamasını hesaplayarak ekrana yazsın.
+
+             */
+            Console.Write("Kaç adet sayı girmek istiyorsunuz ?  ");
+            int adet = Convert.ToInt32(Console.ReadLine());
+
+            int toplam = 0;
+
+            for (int i = 1; i <= adet; i++)
+            {
+                Console.Write("Sayı " +i +" ");
+                int sayi = Convert.ToInt32(Console.ReadLine());
+                toplam += sayi;
+            }
+
+            double ortalama = (double)toplam / adet;
+
+            Console.WriteLine("Girilen " +adet+" sayının toplamı:  " +toplam);
+            Console.WriteLine("Girilen " +adet+" sayının ortalaması: " +ortalama);
+
+            Console.ReadLine();
+        }
+    }
+}
