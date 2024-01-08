@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             ödev static void Main(string[] args)
+             {
+             int sayi, ikiliDeger, onluDeger = 0, tabanDeger = 1, basamakDeger;
+             sayi = 1010111001;
+             ikiliDeger = sayi;
+             while (sayi > 0)
+             {
+             basamakDeger = sayi % 10;
+             onluDeger = onluDeger + basamakDeger * tabanDeger;
+             sayi = sayi / 10;
+             tabanDeger = tabanDeger * 2;
+             }
+             Console.Write("İkili (Binary) Sayı: " + ikiliDeger);
+             Console.Write("\nOnlu (Decimal) Sayı: " + onluDeger);
+             Console.ReadLine();
+             }
+            Ödev: Yukarıdaki örneği ikili sayı sistemindeki değer klavyeden girilecek şekilde yeniden düzenleyiniz.
+             */
+            Console.Write("Bir ikili sayı girin: ");
+            int sayi = Convert.ToInt32(Console.ReadLine());
+            int ikiliDeger, onluDeger = 0, tabanDeger = 1, basamakDeger;
+            ikiliDeger = sayi;
+            while (sayi > 0)
+            {
+
+                basamakDeger = sayi % 10;
+                onluDeger = onluDeger + basamakDeger * tabanDeger;
+                tabanDeger = tabanDeger * 2;
+                sayi = sayi / 10;
+            }
+
+
+            Console.WriteLine("İkili (Binary) Sayı: " + ikiliDeger);
+            Console.WriteLine("Onlu (Decimal) Sayı: " + onluDeger);
+
+            Console.ReadLine();
+        }
+    }
+}
