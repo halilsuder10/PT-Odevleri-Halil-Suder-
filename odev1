@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace soru1
+{
+    internal class Program
+    {
+         static void Main()
+            {
+            /*
+             Ödev: Öyle bir program yazın ki kullanıcının klavyeden girdiği sayıları toplasın, kullanıcı klavyeden 83 girerse toplama 
+             işlemini bitirsin ve sonucu ekrana yazsın.
+                50
+                100
+                300
+                83
+                Toplam=450
+             */
+            int toplam = 0;
+                int sayi;
+
+                Console.WriteLine("Sayıları girmeye başlayın. 83 girildiğinde toplama işlemi sona erecek.");
+
+                do
+                {
+                    Console.Write("Bir sayı girin: ");
+                    string girilenSayi = Console.ReadLine();
+
+                    // Kullanıcının girişini sayıya dönüştürmeye çalışalım.
+                    if (int.TryParse(girilenSayi, out sayi))
+                    {
+                        toplam += sayi;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Geçersiz bir sayı girişi. Lütfen tekrar deneyin.");
+                    }
+
+                } while (sayi != 83);
+
+                Console.WriteLine("Toplam=" +toplam);
+            }
+        }
+
+    }
+
+
