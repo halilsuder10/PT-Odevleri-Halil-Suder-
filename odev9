@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ödev9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*
+             ÖDEV: en yüksek ve en düşük notu alan birden fazla kişi varsa onların da isimlerini yazdırınız.
+             */
+            Console.Write("Öğrenci sayısını girin: ");
+            int ogrenciSayisi = Convert.ToInt32(Console.ReadLine());
+
+            string[] isimler = new string[ogrenciSayisi];
+            double[] notlar = new double[ogrenciSayisi];
+
+            for (int i = 0; i < ogrenciSayisi; i++)
+            {
+                Console.Write("Öğrenci " + (i + 1) + " Adı: ");
+                isimler[i] = Console.ReadLine();
+
+                Console.Write("Öğrenci " + (i + 1) + " Notu: ");
+                notlar[i] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            double enYuksekNot = double.MinValue;
+            double enDusukNot = double.MaxValue;
+
+            List<int> enYuksekIndeksler = new List<int>();
+            List<int> enDusukIndeksler = new List<int>();
+
+            for (int i = 0; i < ogrenciSayisi; i++)
+            {
+                if (notlar[i] > enYuksekNot)
+                {
+                    enYuksekNot = notlar[i];
+                    enYuksekIndeksler.Clear();
+                }
+
+                if (notlar[i] >= enYuksekNot)
+                {
+                    enYuksekIndeksler.Add(i);
+                }
+
+                if (notlar[i] < enDusukNot)
+                {
+                    enDusukNot = notlar[i];
+                    enDusukIndeksler.Clear();
+                }
+
+                if (notlar[i] <= enDusukNot)
+                {
+                    enDusukIndeksler.Add(i);
+                }
+            }
+
+            Console.WriteLine("\nEn Yüksek Not:");
+            foreach (var indeks in enYuksekIndeksler)
+            {
+                Console.WriteLine(isimler[indeks] + ": " + enYuksekNot);
+            }
+
+            Console.WriteLine("\nEn Düşük Not:");
+            foreach (var indeks in enDusukIndeksler)
+            {
+                Console.WriteLine(isimler[indeks] + ": " + enDusukNot);
+            }
+
+            Console.Write("\nDevam etmek için bir tuşa basınız...");
+            Console.ReadKey();
+        }
+    }
+}
